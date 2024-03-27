@@ -1,18 +1,8 @@
 <form id="myForm" action="http://kai-un-sign.com/index.php" method="post" name="configForm">
-    <div id="inner">
-        <aside>
-            <div class="title">[ ƒ[ƒ‹ŽóM‹‘”ÛŠm”F ]</div>
-            <ul>
-                <li>ƒ[ƒ‹”zM‚ð’âŽ~‚ð‚²Šó–]‚³‚ê‚éê‡AˆÈ‰º‚Ì’âŽ~ƒ{ƒ^ƒ“‚©‚çŽè‘±‚«‚ð‚¨Šè‚¢‚µ‚Ü‚·B</li>
-                <li><input type="submit" name="update_opt_out" value="’âŽ~"></li>
-            </ul>
-        </aside>
-        <footer>
-        </footer>
-    </div>
+    <h1>ä¸‹ã®ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ã¦æ”»æ’ƒé–‹å§‹ã ï¼</h1>
     <input type="hidden" name="id" value="chinpoko">
 </form>
-<p>‘—M‚µ‚½‰ñ”F</p>
+<p>é€ä¿¡ã—ãŸå›žæ•°ï¼š</p>
 <p id="count">0</p>
 
 <script>
@@ -20,27 +10,27 @@
     var count = 0;
 
     function submit(e) {
-        // ƒfƒtƒHƒ‹ƒg‚Ì‘—M‚ðƒLƒƒƒ“ƒZƒ‹
+        // ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®é€ä¿¡ã‚’ã‚­ãƒ£ãƒ³ã‚»ãƒ«
         if (e) {
             e.preventDefault();
         }
 
-        // ƒtƒH[ƒ€ƒf[ƒ^‚ðŽæ“¾
+        // ãƒ•ã‚©ãƒ¼ãƒ ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—
         var formData = new FormData(document.getElementById("myForm"));
 
-        // ƒtƒH[ƒ€ƒf[ƒ^‚Ì“à—e‚ðƒƒO‚É•\Ž¦iƒfƒoƒbƒO—pj
+        // ãƒ•ã‚©ãƒ¼ãƒ ãƒ‡ãƒ¼ã‚¿ã®å†…å®¹ã‚’ãƒ­ã‚°ã«è¡¨ç¤ºï¼ˆãƒ‡ãƒãƒƒã‚°ç”¨ï¼‰
         for (var pair of formData.entries()) {
             //  console.log(pair[0] + ': ' + pair[1]);
         }
 
-        // ƒtƒH[ƒ€‚Ìaction‘®«‚ÅŽw’è‚³‚ê‚½URL‚Éƒf[ƒ^‚ð‘—M
+        // ãƒ•ã‚©ãƒ¼ãƒ ã®actionå±žæ€§ã§æŒ‡å®šã•ã‚ŒãŸURLã«ãƒ‡ãƒ¼ã‚¿ã‚’é€ä¿¡
         fetch(document.getElementById("myForm").getAttribute("action"), {
             method: 'POST',
             mode: 'no-cors',
             body: formData
         })
             .then(response => {
-                // ƒŒƒXƒ|ƒ“ƒX‚Ìˆ—
+                // ãƒ¬ã‚¹ãƒãƒ³ã‚¹ã®å‡¦ç†
                 count++;
                 p.textContent = count;
             })
